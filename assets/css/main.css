@@ -266,7 +266,7 @@
   --background-color: #000000; /* Background color for the entire website, including individual sections */
   --default-color: #fafafa; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #1752f2; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #198754; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #1a1a1a; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #000000; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -274,11 +274,11 @@
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #fafafa;  /* The default color of the main navmenu links */
-  --nav-hover-color: #1752f2; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-color: #198754; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #1a1a1a; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #1a1a1a; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #fafafa; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #1752f2; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #198754; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -1007,35 +1007,83 @@ section,
   background-color: var(--accent-color);
 }
 
-/* RESPONSIVE */
-@media (max-width: 992px) {
-  .hero h2 {
-    font-size: 48px;
-  }
-
-  .hero p {
-    font-size: 18px;
-  }
+/* Estilos ligeros para enlaces de portafolio en el hero */
+.dev-links .btn {
+  border-radius: 20px;
+  padding: 6px 12px;
 }
 
-@media (max-width: 768px) {
-  .hero h2 {
-    font-size: 36px;
-  }
+/* Responsive: enlaces de portafolio en móvil a ancho completo */
+@media (max-width: 576px) {
+  .dev-links { gap: 8px !important; }
+  .dev-links .btn { width: 100%; text-align: center; }
+}
 
-  .hero p {
-    font-size: 14px;
-  }
+/* Overlay de servicios dentro del hero */
+.hero-services {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.hero-service-card {
+  background: rgba(26, 26, 26, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+}
+
+.hero-service-card h3 {
+  color: var(--heading-color);
 }
 
 @media (max-width: 576px) {
-  .hero h2 {
-    font-size: 28px;
-  }
+  .hero-services { padding: 12px; }
+  .hero-service-card { padding: 12px; }
+}
 
-  .hero p {
-    font-size: 12px;
-  }
+/* Layout refinado para el overlay a la derecha en desktop */
+@media (min-width: 992px) {
+  .hero-services { margin-left: auto; max-width: 560px; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .hero h2 { font-size: 48px; }
+  .hero p { font-size: 18px; }
+  .hero { padding: 64px 0; }
+}
+
+@media (max-width: 768px) {
+  .hero h2 { font-size: 36px; }
+  .hero p { font-size: 14px; }
+  .hero { padding: 56px 0; }
+}
+
+@media (max-width: 576px) {
+  .hero h2 { font-size: 28px; }
+  .hero p { font-size: 12px; }
+  .hero { padding: 48px 0; }
+}
+
+/* Mejoras responsive para cards del hero */
+@media (max-width: 576px) {
+  .hero-service-card i { font-size: 1.3rem !important; }
+  .hero-service-card h3 { font-size: 0.9rem; }
+  .hero-service-card p { font-size: 0.8rem; }
+}
+
+/* Reducir un poco textos en todas las resoluciones */
+.hero-service-card h3 { font-size: 0.95rem; }
+.hero-service-card p { font-size: 0.9rem; }
+
+
+/* Ocultar overlay en móviles (mostrar desde >=768px) */
+@media (max-width: 767.98px) {
+  .hero-services { display: none; }
 }
 
 
@@ -1073,7 +1121,7 @@ section,
   height: auto;
   max-width: 400px;
   border-radius: 15rem;
-  border: 3px solid #1752f2;
+  border: 3px solid #198754;
   margin: 0 auto;
   display: block;
 }
@@ -1389,9 +1437,9 @@ section,
 .resume button {
   border-radius: 1rem;
   padding: 10px 16px;
-  color: #1752f2;
+  color: #198754;
   font-size: 16px;
-  border: 2px solid #1752f2;
+  border: 2px solid #198754;
   background: transparent;
   cursor: pointer;
   transition: 0.3s ease;
@@ -1399,7 +1447,7 @@ section,
 }
 
 .resume button:hover {
-  background-color: #1752f2;
+  background-color: #198754;
   color: #fff;
 }
 
@@ -1535,6 +1583,10 @@ section,
   line-height: 1.6;
   flex-grow: 1;
 }
+
+/* Etiqueta de precio en tarjetas de servicios */
+.service-price { margin: 0 0 1rem 0; }
+.service-price .badge { font-size: 0.95rem; padding: 0.5rem 0.75rem; }
 
 .services .service-item .service-features {
   list-style: none;
@@ -1827,7 +1879,7 @@ section,
 
         .project-card:hover {
             transform: translateY(-5px);
-            border-color: #1752f2;
+            border-color: #198754;
             box-shadow: 0 10px 25px rgba(23, 82, 242, 0.2);
         }
 
@@ -1901,7 +1953,7 @@ section,
         }
 
         .info-label {
-            color: #1752f2;
+            color: #198754;
             font-weight: 500;
             font-size: 0.85rem;
         }
@@ -1916,7 +1968,7 @@ section,
         }
 
         .tech-title {
-            color: #1752f2;
+            color: #198754;
             font-size: 0.8rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
@@ -1959,18 +2011,18 @@ section,
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: #1752f2;
+            color: #198754;
             text-decoration: none;
             font-weight: 500;
             padding: 0.7rem 1.2rem;
-            border: 1px solid #1752f2;
+            border: 1px solid #198754;
             border-radius: 6px;
             transition: all 0.3s ease;
             font-size: 0.9rem;
         }
 
         .project-link:hover {
-            background: #1752f2;
+            background: #198754;
             color: #fff;
         }
 
