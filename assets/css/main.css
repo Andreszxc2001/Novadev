@@ -108,6 +108,11 @@
   color: white;
 }
 
+.social-link.discord:hover {
+  background: #5865f2;
+  color: white;
+}
+
 .social-link.whatsapp:hover {
   background: #25d366;
   color: white;
@@ -2316,148 +2321,412 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Payment Methods Section
+# Payment Methods Section - Fully Responsive
 --------------------------------------------------------------*/
 .payment-methods-section {
   background: var(--surface-color);
-  padding: 2.5rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  margin: 2rem 0;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin: 3rem 0;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.payment-methods-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-color), #28a745, #007bff);
+  border-radius: 20px 20px 0 0;
 }
 
 .payment-methods-section h3 {
   color: var(--heading-color);
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 1rem;
+  font-size: 2rem;
 }
 
 .payment-methods-section h3 i {
   color: var(--accent-color);
+  margin-right: 0.5rem;
+}
+
+.payment-methods-section p {
+  color: var(--default-color);
+  opacity: 0.8;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
 }
 
 .payment-methods-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem;
+  margin: 2.5rem 0;
   justify-items: center;
+  align-items: start;
 }
 
 .payment-method {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 12px;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
+  padding: 1.8rem 1.2rem;
+  background: rgba(0, 0, 0, 0.95);
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  min-width: 120px;
+  min-width: 140px;
+  width: 100%;
+  max-width: 180px;
+  position: relative;
+  backdrop-filter: blur(10px);
 }
 
 .payment-method:hover {
-  transform: translateY(-3px);
+  transform: translateY(-8px) scale(1.02);
   border-color: var(--accent-color);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 1);
 }
 
 .payment-icon {
-  width: 70px;
-  height: 70px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 15px;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.8rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 3px solid rgba(255, 255, 255, 0.8);
 }
 
 .payment-icon:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   border-color: var(--accent-color);
 }
 
 .payment-logo {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
   transition: all 0.3s ease;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
 }
 
 .payment-method:hover .payment-logo {
   transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
 }
 
 .payment-name {
-  font-weight: 500;
+  font-weight: 600;
   color: var(--heading-color);
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-align: center;
+  letter-spacing: 0.3px;
+  line-height: 1.3;
 }
 
 .payment-countries {
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .payment-countries .badge {
-  font-size: 0.85rem;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+  font-size: 0.9rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.payment-countries .badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
 .payment-countries .badge i {
-  margin-right: 0.3rem;
+  margin-right: 0.5rem;
+  font-size: 1rem;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+/* Responsive Design - Mobile First Approach */
+
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .payment-methods-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1000px;
+    margin: 2.5rem auto;
+  }
+}
+
+/* Desktop (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
   .payment-methods-section {
-    padding: 1.5rem;
-    margin: 1rem 0;
+    padding: 2.5rem 1.5rem;
   }
   
   .payment-methods-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.8rem;
+  }
+}
+
+/* Tablet Landscape (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .payment-methods-section {
+    padding: 2.2rem 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .payment-methods-section h3 {
+    font-size: 1.8rem;
+  }
+  
+  .payment-methods-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
   }
   
   .payment-method {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
+    min-width: 130px;
+    max-width: 160px;
+  }
+  
+  .payment-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .payment-logo {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Tablet Portrait (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+  .payment-methods-section {
+    padding: 2rem 1.2rem;
+    margin: 1.5rem 0;
+    border-radius: 16px;
+  }
+  
+  .payment-methods-section h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .payment-methods-section p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .payment-methods-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.3rem;
+    margin: 2rem 0;
+  }
+  
+  .payment-method {
+    padding: 1.3rem 0.8rem;
     min-width: 110px;
+    max-width: 140px;
+  }
+  
+  .payment-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+  }
+  
+  .payment-logo {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .payment-name {
+    font-size: 0.9rem;
+  }
+  
+  .payment-countries {
+    margin-top: 1.5rem;
+    gap: 0.8rem;
+  }
+  
+  .payment-countries .badge {
+    font-size: 0.85rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* Mobile Large (480px - 575px) */
+@media (max-width: 575px) and (min-width: 480px) {
+  .payment-methods-section {
+    padding: 1.8rem 1rem;
+    margin: 1.2rem 0;
+    border-radius: 14px;
+  }
+  
+  .payment-methods-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .payment-methods-section p {
+    font-size: 0.95rem;
+    margin-bottom: 1.8rem;
+  }
+  
+  .payment-methods-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin: 1.8rem 0;
+  }
+  
+  .payment-method {
+    padding: 1.2rem 0.8rem;
+    min-width: 120px;
+    max-width: 150px;
+    border-radius: 12px;
   }
   
   .payment-icon {
     width: 60px;
     height: 60px;
+    border-radius: 14px;
+    margin-bottom: 0.8rem;
   }
   
   .payment-logo {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
+  }
+  
+  .payment-name {
+    font-size: 0.85rem;
+    line-height: 1.2;
+  }
+  
+  .payment-countries {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.3rem;
+  }
+  
+  .payment-countries .badge {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    min-width: 110px;
+  }
+}
+
+/* Mobile Small (320px - 479px) */
+@media (max-width: 479px) {
+  .payment-methods-section {
+    padding: 1.5rem 0.8rem;
+    margin: 1rem 0;
+    border-radius: 12px;
+  }
+  
+  .payment-methods-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .payment-methods-section p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .payment-methods-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+    padding: 0 0.2rem;
+  }
+  
+  .payment-method {
+    padding: 1rem 0.6rem;
+    min-width: 100px;
+    max-width: 130px;
+    border-radius: 10px;
+  }
+  
+  .payment-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    margin-bottom: 0.7rem;
+  }
+  
+  .payment-logo {
+    width: 38px;
+    height: 38px;
   }
   
   .payment-name {
     font-size: 0.8rem;
+    line-height: 1.1;
+    font-weight: 500;
+  }
+  
+  .payment-countries {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+  }
+  
+  .payment-countries .badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    min-width: 100px;
+    border-radius: 20px;
   }
 }
 
-@media (max-width: 480px) {
+/* Extra Small Mobile (below 320px) */
+@media (max-width: 319px) {
+  .payment-methods-section {
+    padding: 1.2rem 0.5rem;
+  }
+  
+  .payment-methods-section h3 {
+    font-size: 1.2rem;
+  }
+  
   .payment-methods-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 0.8rem;
   }
   
   .payment-method {
-    padding: 0.8rem;
+    padding: 0.8rem 0.4rem;
     min-width: 90px;
   }
   
@@ -2473,11 +2742,5 @@ section,
   
   .payment-name {
     font-size: 0.75rem;
-  }
-  
-  .payment-countries .badge {
-    display: block;
-    margin: 0.3rem auto;
-    width: fit-content;
   }
 }

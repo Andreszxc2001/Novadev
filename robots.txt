@@ -1,0 +1,36 @@
+# robots.txt para NovaDev
+# https://novatechnologiesdev.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Archivos y directorios permitidos
+Allow: /assets/
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/img/
+Allow: /assets/svg/
+
+# Archivos que no queremos indexar
+Disallow: /assets/vendor/
+Disallow: /assets/scss/
+Disallow: /assets/includes/
+Disallow: /*.map$
+
+# Páginas específicas
+Allow: /index.html
+Allow: /services.html
+Allow: /about.html
+Allow: /contact.html
+Allow: /portfolio.html
+Allow: /portfolio-details.html
+Allow: /service-details.html
+
+# Evitar páginas de prueba
+Disallow: /starter-page.html
+
+# Sitemap
+Sitemap: https://novatechnologiesdev.com/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1

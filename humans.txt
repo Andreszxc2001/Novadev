@@ -1,0 +1,44 @@
+/* TEAM */
+CEO & Founder: Arnaldo Pushaina
+Contact: arnaldozxc [at] gmail.com
+WhatsApp: +57 301 9441676
+Location: Riohacha, La Guajira, Colombia
+
+Developer: Arnaldo Andres Pushaina Pushaina
+GitHub: https://github.com/Andreszxc2001
+LinkedIn: https://www.linkedin.com/in/arnaldo-andres-pushaina-pushaina-377794268
+Location: Riohacha, La Guajira, Colombia
+
+/* THANKS */
+Bootstrap Team
+Font Awesome Team
+Google Fonts Team
+AOS Library Team
+
+/* SITE */
+Last update: 2025/09/11
+Language: Spanish / English
+Doctype: HTML5
+IDE: Visual Studio Code
+Technologies: HTML5, CSS3, JavaScript, PHP, MySQL, Python
+Framework: Bootstrap 5.3.3
+Icons: Bootstrap Icons, Font Awesome
+Fonts: Roboto, Poppins, Inter, Montserrat
+Hosting: TBD
+Domain: novatechnologiesdev.com
+
+/* COMPANY */
+Company: NovaDev
+Founded: 2023
+Services: Web Development, Software Development, E-commerce, SEO, Digital Consulting
+Target Market: Latin America (LATAM)
+Specialties: Corporate Websites, Web Applications, Online Stores, Management Systems
+
+/* STANDARDS */
+HTML5 Valid
+CSS3 Valid
+WCAG 2.1 AA Accessible
+SEO Optimized
+Mobile First Responsive Design
+Fast Loading
+Cross-browser Compatible
