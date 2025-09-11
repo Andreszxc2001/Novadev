@@ -1,5 +1,5 @@
 # robots.txt para NovaDev
-# https://novatechnologiesdev.com/robots.txt
+# https://www.novatechnologiesdev.com/robots.txt
 
 User-agent: *
 Allow: /
@@ -30,7 +30,7 @@ Allow: /service-details.html
 Disallow: /starter-page.html
 
 # Sitemap
-Sitemap: https://novatechnologiesdev.com/sitemap.xml
+Sitemap: https://www.novatechnologiesdev.com/sitemap.xml
 
 # Crawl delay
 Crawl-delay: 1

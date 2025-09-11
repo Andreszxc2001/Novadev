@@ -7,9 +7,9 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirección www a no-www (o viceversa según prefieras)
-RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+# Redirección no-www a www (dominio principal con www)
+RewriteCond %{HTTP_HOST} ^novatechnologiesdev\.com$ [NC]
+RewriteRule ^(.*)$ https://www.novatechnologiesdev.com/$1 [R=301,L]
 
 # Comprimir contenido para mejor velocidad
 <IfModule mod_deflate.c>
