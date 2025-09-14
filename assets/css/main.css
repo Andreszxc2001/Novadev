@@ -1593,6 +1593,29 @@ section,
 .service-price { margin: 0 0 1rem 0; }
 .service-price .badge { font-size: 0.95rem; padding: 0.5rem 0.75rem; }
 
+/* Etiquetas para mostrar plan básico o premium */
+.service-plan {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.service-plan.premium {
+  background-color: #FFD700;
+  color: #000;
+}
+
+.service-plan.basico {
+  background-color: #6c757d;
+  color: #fff;
+}
+
 .services .service-item .service-features {
   list-style: none;
   padding: 0;
