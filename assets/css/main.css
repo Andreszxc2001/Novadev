@@ -1085,6 +1085,261 @@ section,
 .hero-service-card h3 { font-size: 0.95rem; }
 .hero-service-card p { font-size: 0.9rem; }
 
+/* Estilos base para mostrar/ocultar versiones - IMPORTANTE: solo mostrar móvil en pantallas pequeñas */
+.desktop-only, .dev-desktop {
+  display: flex;
+}
+
+.mobile-only, .dev-mobile {
+  display: none !important;
+}
+
+/* Estilos para los enlaces de desarrolladores - versión desktop */
+.dev-chips {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.dev-chip {
+  position: relative;
+  overflow: hidden;
+  padding: 0.5rem 1.2rem;
+  background: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+  border: 1px solid rgba(40, 167, 69, 0.3);
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  z-index: 1;
+  backdrop-filter: blur(5px);
+}
+
+.dev-chip:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.dev-chip:hover:before {
+  left: 100%;
+}
+
+.dev-chip:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.dev-chip:hover:after {
+  opacity: 1;
+}
+
+/* Añadir efecto de brillo a los enlaces móviles */
+.dev-link:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: 0.5s;
+}
+
+.dev-link:hover:before {
+  left: 100%;
+}
+
+.dev-chip:hover {
+  background: #28a745;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+  text-decoration: none;
+}
+
+.dev-chip .icon {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.dev-chip .dev-name {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.dev-chip:hover .icon {
+  transform: scale(1.2);
+}
+
+.dev-chip:hover .dev-name {
+  letter-spacing: 0.5px;
+}
+
+/* Añadir animación al texto en móvil al hacer hover */
+.dev-link:hover .dev-text {
+  letter-spacing: 0.7px;
+}
+
+.dev-link:hover .dev-code {
+  transform: scale(1.1);
+  display: inline-block;
+}
+
+.dev-chip.alexis {
+  background: rgba(142, 68, 173, 0.1);
+  color: #8e44ad;
+  border-color: rgba(142, 68, 173, 0.3);
+}
+
+.dev-chip.alexis:hover {
+  background: #8e44ad;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(142, 68, 173, 0.3);
+}
+
+.dev-chip.arnaldo {
+  background: rgba(39, 174, 96, 0.1);
+  color: #27ae60;
+  border-color: rgba(39, 174, 96, 0.3);
+}
+
+.dev-chip.arnaldo:hover {
+  background: #27ae60;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+}
+
+/* Estilos para los enlaces de desarrolladores - versión móvil */
+.dev-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.25rem;
+  width: 100%;
+  gap: 12px;
+}
+
+.dev-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 50px;
+  background: rgba(12, 12, 20, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 48%;
+  overflow: hidden;
+  font-size: 0.85rem;
+}
+
+.dev-link .dev-code {
+  display: inline-block;
+  margin-right: 8px;
+  font-family: 'Consolas', monospace;
+  font-weight: 700;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.dev-link .dev-text {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.dev-link.alexis {
+  color: #b07eda;
+}
+
+.dev-link.alexis .dev-code {
+  color: #9b59b6;
+  margin-right: 10px;
+}
+
+.dev-link.arnaldo {
+  color: #6dd499;
+}
+
+.dev-link.arnaldo .dev-code {
+  color: #2ecc71;
+  margin-right: 10px;
+}
+
+.dev-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+}
+
+.dev-link.alexis:hover {
+  background: linear-gradient(135deg, rgba(155, 89, 182, 0.2), rgba(155, 89, 182, 0.1));
+  border-color: rgba(155, 89, 182, 0.3);
+}
+
+.dev-link.arnaldo:hover {
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.2), rgba(46, 204, 113, 0.1));
+  border-color: rgba(46, 204, 113, 0.3);
+}
+
+/* Media queries para controlar la visibilidad */
+@media (max-width: 767.98px) {
+  .desktop-only, .dev-desktop {
+    display: none !important;
+  }
+  
+  .mobile-only, .dev-mobile {
+    display: flex !important;
+  }
+  
+  .dev-link {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .dev-link .dev-code {
+    font-size: 12px;
+  }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 359px) {
+  .dev-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .dev-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
 
 /* Ocultar overlay en móviles (mostrar desde >=768px) */
 @media (max-width: 767.98px) {

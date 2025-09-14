@@ -200,4 +200,39 @@
 
   });
 
+  /**
+   * Efecto para los chips de desarrolladores
+   */
+  function initDevChips() {
+    const devChips = document.querySelectorAll('.dev-chip');
+    if (!devChips.length) return;
+    
+    devChips.forEach(chip => {
+      // Efecto al hacer hover
+      chip.addEventListener('mouseover', function() {
+        this.style.transition = 'all 0.3s ease';
+        this.style.transform = 'translateY(-3px)';
+      });
+      
+      // Restaurar al salir
+      chip.addEventListener('mouseout', function() {
+        this.style.transform = '';
+      });
+      
+      // Efecto al hacer clic
+      chip.addEventListener('mousedown', function() {
+        this.style.transform = 'scale(0.95)';
+      });
+      
+      // Restaurar después del clic
+      chip.addEventListener('mouseup', function() {
+        setTimeout(() => {
+          this.style.transform = 'translateY(-3px)';
+        }, 150);
+      });
+    });
+  }
+
+  window.addEventListener('load', initDevChips);
+
 })();
